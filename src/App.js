@@ -5,6 +5,26 @@ import { fetchData } from "./redux/data/dataActions";
 import * as s from "./styles/globalStyles";
 import styled from "styled-components";
 import i1 from "./assets/images/1.png";
+import i2 from "./assets/images/2.png";
+import i3 from "./assets/images/3.png";
+import i4 from "./assets/images/4.png";
+import i5 from "./assets/images/5.png";
+import i6 from "./assets/images/6.png";
+import i7 from "./assets/images/7.png";
+import i8 from "./assets/images/8.png";
+import i9 from "./assets/images/9.png";
+import i10 from "./assets/images/10.png";
+import i11 from "./assets/images/11.png";
+import i12 from "./assets/images/12.png";
+import i13 from "./assets/images/13.png";
+import i14 from "./assets/images/14.png";
+import i15 from "./assets/images/15.png";
+import i16 from "./assets/images/16.png";
+import i17 from "./assets/images/17.png";
+import i18 from "./assets/images/18.png";
+import i19 from "./assets/images/19.png";
+import i20 from "./assets/images/20.png";
+import icon from "./assets/images/Icon.png";
 
 export const StyledButton = styled.button`
   padding: 10px;
@@ -53,20 +73,20 @@ function App() {
   const dispatch = useDispatch();
   const blockchain = useSelector((state) => state.blockchain);
   const data = useSelector((state) => state.data);
-  const [feedback, setFeedback] = useState("Maybe it's your lucky day.");
+  const [feedback, setFeedback] = useState("It's your lucky day!");
   const [claimingNft, setClaimingNft] = useState(false);
 
   const claimNFTs = (_amount) => {
     if (_amount <= 0) {
       return;
     }
-    setFeedback("Minting your Nerdy Coder Clone...");
+    setFeedback("Minting your Poly Panda...");
     setClaimingNft(true);
     blockchain.smartContract.methods
       .mint(blockchain.account, _amount)
       .send({
-        gasLimit: "285000",
-        to: "0x827acb09a2dc20e39c9aad7f7190d9bc53534192",
+        gasLimit: "300000",
+        to: "00x9d17d52d185efb0644164f39f631e1012518ee43",
         from: blockchain.account,
         value: blockchain.web3.utils.toWei((100 * _amount).toString(), "ether"),
       })
@@ -77,7 +97,7 @@ function App() {
       })
       .then((receipt) => {
         setFeedback(
-          "WOW, you now own a Nerdy Coder Clone. go visit Opensea.io to view it."
+          "WOW, you now own a Poly Panda! go visit Opensea.io to view it."
         );
         setClaimingNft(false);
         dispatch(fetchData(blockchain.account));
@@ -95,12 +115,12 @@ function App() {
   }, [blockchain.account]);
 
   return (
-    <s.Screen style={{ backgroundColor: "var(--black)" }}>
+    <s.Screen style={{ backgroundColor: "black" }}>
       <s.Container flex={1} ai={"center"} style={{ padding: 24 }}>
         <s.TextTitle
           style={{ textAlign: "center", fontSize: 28, fontWeight: "bold" }}
         >
-          Mint a Nerdy Coder Clone
+          Mint your Poly Panda
         </s.TextTitle>
         <s.SpacerMedium />
         <ResponsiveWrapper flex={1} style={{ padding: 24 }}>
@@ -110,7 +130,7 @@ function App() {
             <s.TextTitle
               style={{ textAlign: "center", fontSize: 35, fontWeight: "bold" }}
             >
-              {data.totalSupply}/1000
+              {data.totalSupply}/5000
             </s.TextTitle>
           </s.Container>
           <s.SpacerMedium />
@@ -118,19 +138,19 @@ function App() {
             flex={1}
             jc={"center"}
             ai={"center"}
-            style={{ backgroundColor: "#383838", padding: 24 }}
+            style={{ backgroundColor: "#e4b3ff", padding: 24 }}
           >
-            {Number(data.totalSupply) == 1000 ? (
+            {Number(data.totalSupply) == 5000 ? (
               <>
                 <s.TextTitle style={{ textAlign: "center" }}>
                   The sale has ended.
                 </s.TextTitle>
                 <s.SpacerSmall />
                 <s.TextDescription style={{ textAlign: "center" }}>
-                  You can still find Nerdy Coder Clones on{" "}
+                  You can still find The Poly Pandas on{" "}
                   <a
                     target={"_blank"}
-                    href={"https://opensea.io/collection/nerdy-coder-clones"}
+                    href={"https://opensea.io/collection/the-poly-pandas"}
                   >
                     Opensea.io
                   </a>
@@ -139,11 +159,11 @@ function App() {
             ) : (
               <>
                 <s.TextTitle style={{ textAlign: "center" }}>
-                  1 NCC costs 100 MATIC.
+                  1 Panda costs 50 MATIC.
                 </s.TextTitle>
                 <s.SpacerXSmall />
                 <s.TextDescription style={{ textAlign: "center" }}>
-                  Excluding gas fee.
+                  (Excluding gas fee).
                 </s.TextDescription>
                 <s.SpacerSmall />
                 <s.TextDescription style={{ textAlign: "center" }}>
@@ -154,7 +174,7 @@ function App() {
                 blockchain.smartContract === null ? (
                   <s.Container ai={"center"} jc={"center"}>
                     <s.TextDescription style={{ textAlign: "center" }}>
-                      Connect to the Polygon network
+                      Connect to the Polygon network to continue
                     </s.TextDescription>
                     <s.SpacerSmall />
                     <StyledButton
@@ -202,7 +222,7 @@ function App() {
           </s.TextDescription>
           <s.SpacerSmall />
           <s.TextDescription style={{ textAlign: "center", fontSize: 9 }}>
-            We have set the gas limit to 285000 for the contract to successfully
+            We have set the gas limit to 300000 for the contract to successfully
             mint your NFT. We recommend that you don't change the gas limit.
           </s.TextDescription>
         </s.Container>

@@ -1,20 +1,20 @@
 // SPDX-License-Identifier: GPL-3.0
 
-// Created by HashLips
-// The Nerdy Coder Clones
+// Created by Dr. NFT
+// The Poly Pandas
 
 pragma solidity ^0.8.0;
 
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 
-contract NerdyCoderClones is ERC721Enumerable, Ownable {
+contract The Poly Pandas is ERC721Enumerable, Ownable {
   using Strings for uint256;
 
   string public baseURI;
   string public baseExtension = ".json";
-  uint256 public cost = 100 ether;
-  uint256 public maxSupply = 1000;
+  uint256 public cost = 50 ether;
+  uint256 public maxSupply = 5000;
   uint256 public maxMintAmount = 20;
   bool public paused = false;
   mapping(address => bool) public whitelisted;

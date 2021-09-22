@@ -1,7 +1,7 @@
 // constants
 import Web3EthContract from "web3-eth-contract";
 import Web3 from "web3";
-import SmartContract from "../../contracts/NCC.json";
+import SmartContract from "../../contracts/PP.json";
 // log
 import { fetchData } from "../data/dataActions";
 
@@ -51,7 +51,7 @@ export const connect = () => {
         if (networkId == 137) {
           const SmartContractObj = new Web3EthContract(
             SmartContract,
-            "0x827acb09a2dc20e39c9aad7f7190d9bc53534192"
+            "0x9d17d52d185efb0644164f39f631e1012518ee43"
           );
           dispatch(
             connectSuccess({
