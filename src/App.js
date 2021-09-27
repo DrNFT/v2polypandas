@@ -5,26 +5,6 @@ import { fetchData } from "./redux/data/dataActions";
 import * as s from "./styles/globalStyles";
 import styled from "styled-components";
 import i1 from "./assets/images/1.png";
-import i2 from "./assets/images/2.png";
-import i3 from "./assets/images/3.png";
-import i4 from "./assets/images/4.png";
-import i5 from "./assets/images/5.png";
-import i6 from "./assets/images/6.png";
-import i7 from "./assets/images/7.png";
-import i8 from "./assets/images/8.png";
-import i9 from "./assets/images/9.png";
-import i10 from "./assets/images/10.png";
-import i11 from "./assets/images/11.png";
-import i12 from "./assets/images/12.png";
-import i13 from "./assets/images/13.png";
-import i14 from "./assets/images/14.png";
-import i15 from "./assets/images/15.png";
-import i16 from "./assets/images/16.png";
-import i17 from "./assets/images/17.png";
-import i18 from "./assets/images/18.png";
-import i19 from "./assets/images/19.png";
-import i20 from "./assets/images/20.png";
-import icon from "./assets/images/Icon.png";
 
 export const StyledButton = styled.button`
   padding: 10px;
@@ -88,7 +68,7 @@ function App() {
         gasLimit: "300000",
         to: "00x9d17d52d185efb0644164f39f631e1012518ee43",
         from: blockchain.account,
-        value: blockchain.web3.utils.toWei((100 * _amount).toString(), "ether"),
+        value: blockchain.web3.utils.toWei((50 * _amount).toString(), "ether"),
       })
       .once("error", (err) => {
         console.log(err);
@@ -120,7 +100,7 @@ function App() {
         <s.TextTitle
           style={{ textAlign: "center", fontSize: 28, fontWeight: "bold" }}
         >
-          Mint your Poly Panda
+          Mint your Poly Panda!
         </s.TextTitle>
         <s.SpacerMedium />
         <ResponsiveWrapper flex={1} style={{ padding: 24 }}>
@@ -222,8 +202,9 @@ function App() {
           </s.TextDescription>
           <s.SpacerSmall />
           <s.TextDescription style={{ textAlign: "center", fontSize: 9 }}>
-            We have set the gas limit to 300000 for the contract to successfully
-            mint your NFT. We recommend that you don't change the gas limit.
+            Gas limit is set to 300000 for the contract to successfully
+            mint your NFT. ***Please note: sometimes due to network congestion, your unique NFT may not show the correct image right away. 
+            Refreshing metadata for the image on OpenSea will resolve this.
           </s.TextDescription>
         </s.Container>
       </s.Container>
