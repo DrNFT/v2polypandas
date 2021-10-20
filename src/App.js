@@ -68,7 +68,7 @@ function App() {
         gasLimit: "300000",
         to: "00x9d17d52d185efb0644164f39f631e1012518ee43",
         from: blockchain.account,
-        value: blockchain.web3.utils.toWei((50 * _amount).toString(), "ether"),
+        value: blockchain.web3.utils.toWei((25 * _amount).toString(), "ether"),
       })
       .once("error", (err) => {
         console.log(err);
@@ -139,7 +139,7 @@ function App() {
             ) : (
               <>
                 <s.TextTitle style={{ textAlign: "center" }}>
-                  1 Panda costs 50 MATIC.
+                  1 Panda costs 25 MATIC.
                 </s.TextTitle>
                 <s.SpacerXSmall />
                 <s.TextDescription style={{ textAlign: "center" }}>
