@@ -13,9 +13,9 @@ contract The Poly Pandas is ERC721Enumerable, Ownable {
 
   string public baseURI;
   string public baseExtension = ".json";
-  uint256 public cost = 25 ether;
+  uint256 public cost = 7 ether;
   uint256 public maxSupply = 5000;
-  uint256 public maxMintAmount = 20;
+  uint256 public maxMintAmount = 10;
   bool public paused = false;
   mapping(address => bool) public whitelisted;
 
